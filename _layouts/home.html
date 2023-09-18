@@ -284,13 +284,29 @@
     <button class="reqDemoBtn">Request Demo</button>
   </a>
 </header>
-<div>
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <a href="/skills-github-pages{{ post.url }}">{{ post.title }}</a>
-        <p>{{ post.url }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+<div class="blogs">
+  {% for post in site.posts %}
+  <div class="blogsChild">
+    <div>
+      <div style="display: flex; align-items: center">
+        <p class="category" style="color: white">{{ post.category }}</p>
+        <p class="date">{{ page.date | date_to_string }}</p>
+      </div>
+      <a
+        style="color: black; text-decoration: none"
+        href="/skills-github-pages{{ post.url }}"
+      >
+        <h2 class="{styles.title}">{el.attributes.title}</h2>
+      </a>
+    </div>
+    <a
+      style="color: black; text-decoration: none"
+      href="/skills-github-pages{{ post.url }}"
+    >
+    </a>
+    <p class="{styles.author}">
+      <a By href="{{ post.linkedinProfile }}"> {{ post.author }} </a>
+    </p>
+  </div>
+  {% endfor %}
 </div>
