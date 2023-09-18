@@ -412,7 +412,8 @@
       {{ post.excerpt }}
     </a>
     <p class="{styles.author}">
-      <a target="_blank" href="{{ post.linkedinProfile }}"> By {{ post.author }} </a>
+      By 
+      <a target="_blank" href="{{ post.linkedinProfile }}">{{ post.author }}</a>
     </p>
   </div>
   {% endfor %}
