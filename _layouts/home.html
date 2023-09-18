@@ -3,6 +3,155 @@
     margin: 0%;
     padding: 0%;
   }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(48, 48, 48);
+    padding: 1.5vh 3.5vh;
+    align-items: center;
+  }
+
+  .header > img {
+    cursor: pointer;
+    margin: auto 0;
+  }
+
+  .nav {
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    /* padding-top: 2vh; */
+  }
+
+  .nav > a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .carousel > div > div > div {
+    margin: auto;
+  }
+
+  .reqDemoBtn {
+    border-radius: 0;
+    padding: 10% 5%;
+    text-transform: capitalize;
+    backdrop-filter: blur(6px);
+    color: white;
+    width: 9.4rem;
+    font-weight: 600;
+    background-color: rgba(160, 160, 160, 0.5);
+  }
+
+  .reqDemoBtn:hover {
+    background-color: rgba(48, 48, 48, 0.5);
+  }
+
+  .introVideoCont {
+    background: linear-gradient(90deg, #000 29.23%, rgba(0, 0, 0, 0) 100%);
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .introVideo {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: -100;
+    right: 0;
+  }
+
+  .introText {
+    color: white;
+    font-size: clamp(1rem, 0.5rem + 10vw, 2.7rem);
+    font-weight: 700;
+    width: 45%;
+    margin-top: 20vh;
+    margin-left: 8vw;
+    letter-spacing: 1.048px;
+  }
+
+  .p {
+    color: white;
+    opacity: 0.5;
+    margin-left: 8vw;
+    margin-top: 0.8rem;
+    letter-spacing: 0.811px;
+  }
+
+  .btn {
+    padding: 0.8rem 1.2rem;
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+    box-shadow: none;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  .brandLogos {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    bottom: 3vh;
+    justify-content: space-evenly;
+  }
+
+  .btns {
+    width: 40%;
+    display: flex;
+    margin-left: 8vw;
+    padding: 1.8rem 0rem;
+  }
+
+  .btns a {
+    text-decoration: none;
+  }
+
+  .exploreUseCasesBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    border: none;
+    color: white;
+    padding: 0.8rem 0.4rem 0.8rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .exploreUseCasesImg {
+    width: 2.5em;
+    margin-left: 0.5rem;
+    border-radius: 50px;
+  }
+
+  .btns button {
+    border-radius: 0;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .btns :nth-child(2) button {
+    background-color: white;
+    color: var(--secondary-color);
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    margin-left: 10%;
+    font-weight: 600;
+  }
+
+  .brandLogos > img {
+    object-fit: contain;
+  }
+
+  .hamburgerMenu {
+    display: none;
+  }
 
     /* ----- */
   .blogs {
@@ -109,10 +258,140 @@
 }
 
   /* -------- */
+  
+  @media screen and (max-height: 725px) {
+    .brandLogos {
+      margin-top: 4%;
+      position: static;
+    }
+  }
 
+  @media screen and (max-width: 966px) {
+    .introText {
+      width: 70%;
+    }
+
+    .btns {
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    .nav {
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .brandLogos {
+      bottom: 0vh;
+    }
+
+    .brandLogos div {
+      width: 17%;
+    }
+    .brandLogos img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /* Mobile Screens */
+  @media screen and (max-width: 640px) {
+    .nav {
+      display: none;
+    }
+
+    .reqDemoBtn {
+      display: none;
+    }
+
+    .introVideoCont {
+      background: linear-gradient(180deg, #000 29.23%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .introText {
+      width: fit-content;
+      font-size: 1.8rem;
+      margin-top: 15vh;
+      margin-left: 0;
+      padding-left: 10vw;
+    }
+
+    .btns {
+      width: 60%;
+      flex-direction: column;
+    }
+
+    .btns button {
+      width: 80%;
+    }
+
+    .btns :nth-child(2) button {
+      width: 80%;
+      margin-left: 0%;
+    }
+
+    .exploreUseCasesBtn {
+      margin-bottom: 1rem;
+    }
+
+    .hamburgerMenu {
+      display: block;
+    }
+
+    .brandLogos {
+      width: 100%;
+      margin-top: 0;
+      overflow-x: auto;
+      justify-content: start;
+    }
+
+    .brandLogos img {
+      margin: 0 10px;
+    }
+
+    .exploreUseCasesImg {
+      margin-left: 0.5rem;
+    }
+  }
 </style>
+<header class="header">
+  <a href="/">
+    <img
+      src="baseer-logo.svg"
+      
+      alt="Baseer Logo"
+    />
+  </a>
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/">
+      Solutions
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="8"
+        height="6"
+        viewBox="0 0 8 6"
+        fill="none"
+      >
+        <path
+          d="M7.21843 0.535919H0.283203L3.75082 5.73734L7.21843 0.535919Z"
+          fill="white"
+        />
+      </svg>
+    </a>
+
+    <a href="/resources">Resources</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <a href="/contact">
+    <button class="reqDemoBtn">Request Demo</button>
+  </a>
+</header>
 <div class="blogs">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
   <div class="blogsChild">
     <div>
       <div style="display: flex; align-items: center">
