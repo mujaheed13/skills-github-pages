@@ -5,10 +5,7 @@
     margin: 0%;
     padding: 0%;
   }
-  .container {
-    width: 50%;
-    margin: 6vh auto;
-  }  
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -159,6 +156,105 @@
     display: none;
   }
 
+.container {
+  width: 50%;
+  margin: 6vh auto;
+}
+
+.container p:not(.date, .title, .author) {
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+.container p,
+.container b {
+  font-family: "Poppins", sans-serif;
+}
+
+.category {
+  background-color: rgb(20, 88, 88);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  text-transform: capitalize;
+}
+
+.tags {
+  display: flex;
+}
+
+.tags > p {
+  margin: 1.5rem 1rem 1.5rem 0rem;
+  padding: 0.5rem;
+  padding-left: 0;
+}
+
+.tag {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.date,
+.title,
+.author {
+  text-align: center;
+}
+
+.title {
+  margin: 0.3rem auto;
+}
+
+.date {
+  opacity: 0.5;
+  margin-left: 1rem;
+}
+
+.author {
+  opacity: 0.7;
+  margin-top: 0;
+}
+
+.hr {
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    width: 80%;
+  }
+
+  .container p:not(.date, .title, .author) {
+    font-size: 0.8em;
+  }
+
+  .title {
+    font-size: 1.6em;
+  }
+
+  .date,
+  .author {
+    font-size: 0.8em;
+  }
+}
+
+  
+  
+
   @media screen and (max-height: 725px) {
     .brandLogos {
       margin-top: 4%;
@@ -290,7 +386,51 @@
     <button class="reqDemoBtn">Request Demo</button>
   </a>
 </header>
+
 <div class="container">
-  <h1> {{ page.title }} Test </h1>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      margin: auto;
+      padding: 0
+    "
+  >
+    <p
+      class="category"
+      style="
+        color: white;
+        margin: 0;
+      "
+    >
+      {{ page.category }}
+    </p>
+    <p class="date">{{ page.date }}</p>
+  </div>
+  <h1 class="title">{{ page.title }}</h1>
+  <p class="author">
+    Published by{" "}
+    <Link target="_blank" href={{ page.linkedinProfile }}>
+      {{ page.author }}
+    </Link>
+  </p>
+  <hr class="hr" />
+  <div>
     {{ page.content }}
-</div>
+  </div>
+  <hr
+    style="margin-top: 2rem"
+  />
+  <div class="tags">
+    <p>Tags :</p>
+    <p class="tag">Test Tag</p>
+    <!-- {blog.attributes.tags &&
+      blog.attributes.tags.map((tag: string, index: number) => {
+        return (
+          <p class={styles.tag} key={`${tag} ${index}`}>
+            {tag}
+          </p>
+        );
+      })} -->
+  </div>
